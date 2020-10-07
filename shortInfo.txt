@@ -1,0 +1,5 @@
+Modbus RTU implementation
+USART2 used. (48Mhz port speed; asynch full duplex mode(most common & usual mode))
+DMA1(channel 4 for both, stream 5(RX) and stream 6(TX))
+
+Short algorithm description:
