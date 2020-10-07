@@ -1,2 +1,2 @@
 # Modbus
-Different modbus realization for MC`s
+Different modbus realizations for MC`s
