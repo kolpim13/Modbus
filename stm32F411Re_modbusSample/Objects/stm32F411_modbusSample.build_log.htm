@@ -1,0 +1,117 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.28.0.0
+Copyright (C) 2019 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Maksym Torhunakov, Ivano-Frankivsk Universyti of Oil anad Gas, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.28.0.0
+Toolchain Path:  E:\program\keil\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.28.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.6.0
+Dialog DLL:      TCM.DLL V1.36.2.0
+ 
+<h2>Project:</h2>
+E:\projects\keil\samples\stm32F411Re_modbusSample\stm32F411_modbusSample.uvprojx
+Project File Date:  10/08/2020
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'E:\program\keil\ARM\ARMCC\Bin'
+Build target 'Target 1'
+compiling usart.c...
+usart.c(125): warning:  #513-D: a value of type "void (*)(void)" cannot be assigned to an entity of type "volatile void (*)(void)"
+  			modbusFunction = modbusReadHoldings;
+usart.c(129): warning:  #513-D: a value of type "void (*)(void)" cannot be assigned to an entity of type "volatile void (*)(void)"
+  			modbusFunction = modbusWriteHolding;
+usart.c(140): warning:  #120-D: return value type does not match the function type
+  		case GROUP4_REG001:{*reg = holdingRegGroup_1.reg1; *regType = HOLDING_REG; return TRUE;}
+usart.c(140): warning:  #152-D: conversion of nonzero integer to pointer
+  		case GROUP4_REG001:{*reg = holdingRegGroup_1.reg1; *regType = HOLDING_REG; return TRUE;}
+usart.c(141): warning:  #120-D: return value type does not match the function type
+  		case GROUP4_REG002:{*reg = holdingRegGroup_1.reg2; *regType = HOLDING_REG; return TRUE;}
+usart.c(141): warning:  #152-D: conversion of nonzero integer to pointer
+  		case GROUP4_REG002:{*reg = holdingRegGroup_1.reg2; *regType = HOLDING_REG; return TRUE;}
+usart.c(142): warning:  #120-D: return value type does not match the function type
+  		case GROUP4_REG003:{*reg = holdingRegGroup_1.reg3; *regType = HOLDING_REG; return TRUE;}
+usart.c(142): warning:  #152-D: conversion of nonzero integer to pointer
+  		case GROUP4_REG003:{*reg = holdingRegGroup_1.reg3; *regType = HOLDING_REG; return TRUE;}
+usart.c(143): warning:  #120-D: return value type does not match the function type
+  		case GROUP4_REG004:{*reg = holdingRegGroup_1.reg4; *regType = HOLDING_REG; return TRUE;}
+usart.c(143): warning:  #152-D: conversion of nonzero integer to pointer
+  		case GROUP4_REG004:{*reg = holdingRegGroup_1.reg4; *regType = HOLDING_REG; return TRUE;}
+usart.c(144): warning:  #120-D: return value type does not match the function type
+  		case GROUP4_REG005:{*reg = holdingRegGroup_1.reg5; *regType = HOLDING_REG; return TRUE;}
+usart.c(144): warning:  #152-D: conversion of nonzero integer to pointer
+  		case GROUP4_REG005:{*reg = holdingRegGroup_1.reg5; *regType = HOLDING_REG; return TRUE;}
+usart.c(146): warning:  #120-D: return value type does not match the function type
+  		case GROUP4_REG101:{*reg = holdingRegGroup_2.reg1; *regType = HOLDING_REG; return TRUE;}
+usart.c(146): warning:  #152-D: conversion of nonzero integer to pointer
+  		case GROUP4_REG101:{*reg = holdingRegGroup_2.reg1; *regType = HOLDING_REG; return TRUE;}
+usart.c(147): warning:  #120-D: return value type does not match the function type
+  		case GROUP4_REG102:{*reg = holdingRegGroup_2.reg2; *regType = HOLDING_REG; return TRUE;}
+usart.c(147): warning:  #152-D: conversion of nonzero integer to pointer
+  		case GROUP4_REG102:{*reg = holdingRegGroup_2.reg2; *regType = HOLDING_REG; return TRUE;}
+usart.c(148): warning:  #120-D: return value type does not match the function type
+  		case GROUP4_REG103:{*reg = holdingRegGroup_2.reg3; *regType = HOLDING_REG; return TRUE;}
+usart.c(148): warning:  #152-D: conversion of nonzero integer to pointer
+  		case GROUP4_REG103:{*reg = holdingRegGroup_2.reg3; *regType = HOLDING_REG; return TRUE;}
+usart.c(149): warning:  #120-D: return value type does not match the function type
+  		case GROUP4_REG104:{*reg = holdingRegGroup_2.reg4; *regType = HOLDING_REG; return TRUE;}
+usart.c(149): warning:  #152-D: conversion of nonzero integer to pointer
+  		case GROUP4_REG104:{*reg = holdingRegGroup_2.reg4; *regType = HOLDING_REG; return TRUE;}
+usart.c(150): warning:  #120-D: return value type does not match the function type
+  		case GROUP4_REG105:{*reg = holdingRegGroup_2.reg5; *regType = HOLDING_REG; return TRUE;}
+usart.c(150): warning:  #152-D: conversion of nonzero integer to pointer
+  		case GROUP4_REG105:{*reg = holdingRegGroup_2.reg5; *regType = HOLDING_REG; return TRUE;}
+usart.c(188): warning:  #167-D: argument of type "volatile int8_t *" is incompatible with parameter of type "uint8_t *"
+  	int16_t crc = CRC_calc(modbusTransferBuf, modbusTransferBufLen-2);
+usart.c(193): warning:  #177-D: variable "a"  was declared but never referenced
+  	int a = 5+3;
+usart.c: 24 warnings, 0 errors
+linking...
+Program Size: Code=1630 RO-data=954 RW-data=28 ZI-data=2148  
+FromELF: creating hex file...
+".\Objects\stm32F411_modbusSample.axf" - 0 Error(s), 24 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.6.0.pack
+                ARM.CMSIS.5.6.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.3.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F4xx_DFP.2.14.0.pack
+                Keil.STM32F4xx_DFP.2.14.0
+                STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 2.6.3
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_Target_1
+  E:\program\keilPack\ARM\CMSIS\5.6.0\CMSIS\Core\Include
+  E:\program\keilPack\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.3.0
+
+   * Component: Keil::Device:Startup:2.6.3
+      Source file:   MDK\Device\Source\ARM\STM32F411xx_OPT.s
+      Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
+      Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
+      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f411xe.s
+      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
