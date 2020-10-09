@@ -98,12 +98,12 @@ volatile HoldingRegGroup holdingRegGroup_2 = { -1, -2, -3, -4, -5 };
 
 /*functions*/
 inline void modbusReadDMA(void){
-	DMA1_Stream5->CR &= ~DMA_SxCR_EN;					//is needed?
+	//DMA1_Stream5->CR &= ~DMA_SxCR_EN;					//is needed?
 	DMA1->HIFCR |= DMA_HIFCR_CTCIF5;						//RESET complete transfer bit to start new transfer
 	DMA1_Stream5->CR |= DMA_SxCR_EN;
 }
 inline void modbusWriteDMA(void){
-	DMA1_Stream6->CR &= ~DMA_SxCR_EN;					//is needed?
+	//DMA1_Stream6->CR &= ~DMA_SxCR_EN;					//is needed?
 	DMA1->HIFCR |= DMA_HIFCR_CTCIF6;						//RESET complete transfer bit to start new transfer
 	DMA1_Stream6->NDTR = modbusTransferBufLen;		
 	DMA1_Stream6->CR |= DMA_SxCR_EN;
@@ -196,12 +196,15 @@ void modbusWriteHolding(void){
 //INTERRUPTS
 /*usart2 handle*/
 void USART2_IRQHandler(void){
+	
+	DMA1_Stream5->CR &= ~DMA_SxCR_EN;
+	
 	/*if error occur(overrun, framing, noise)*/
 	if(USART2->SR & USART_SR_ORE){					//if ovverrun error occured
 		(void)USART2->DR;									//RESET ORE bit
 		
 		/*reset DMA_usart2_rx settings*/
-		DMA1_Stream5->CR &= ~DMA_SxCR_EN;
+		//DMA1_Stream5->CR &= ~DMA_SxCR_EN;
 		DMA1->HIFCR |= DMA_HIFCR_CTCIF5;
 		DMA1_Stream5->M0AR = (uint32_t)&modbusTransferBuf[0];
 		DMA1_Stream5->NDTR = MaxModbusBufLen;
@@ -213,7 +216,7 @@ void USART2_IRQHandler(void){
 		(void)USART2->DR;									//RESET IDLE bit
 		
 		/*calculate parsel length and disable DMA*/
-		DMA1_Stream5->CR &= ~DMA_SxCR_EN;
+		//DMA1_Stream5->CR &= ~DMA_SxCR_EN;
 		modbusReceiveBufLen = MaxModbusBufLen - DMA1_Stream5->NDTR;
 		
 		if(validateQuery() == TRUE){
@@ -246,14 +249,7 @@ void DMA1_Stream6_IRQHandler(void){
 	if(DMA1->HISR & DMA_HISR_TCIF6){
 		DMA1->HIFCR |= DMA_HIFCR_CTCIF6;				//clear interrupt flag
 		
-		
-		//DMA1_Stream5->CR &= ~DMA_SxCR_EN;			//is needed?
-		//DMA1->HIFCR |= DMA_HIFCR_CTCIF5;				//RESET complete transfer bit to start new transfer
-		//DMA1_Stream5->NDTR = MaxModbusBufLen;
-		//DMA1_Stream5->CR |= DMA_SxCR_EN;
-		
 		modbusReadDMA();
-		//modbusIsGotQuery = 0;
 	}
 }
 
